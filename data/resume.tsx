@@ -85,27 +85,51 @@ export const DATA = {
     },
     {
       company: "Shopify",
-      badges: [],
+      badges: ["Leadership", "Architecture"],
+      href: "https://shopify.com",
+      location: "Remote",
+      title: "Senior Software Engineer",
+      logoUrl: "/shopify.svg",
+      start: "September 2021",
+      end: "April 2022",
+      description:
+        "Promoted to lead the database infrastructure team. Architected and implemented a multi-region database failover system serving 2M+ merchants. Led a team of 5 engineers to redesign the core payment processing pipeline, resulting in 40% faster transaction processing. Mentored junior developers and established coding standards across the platform engineering org.",
+    },
+    {
+      company: "Shopify",
+      badges: ["Kubernetes", "Go", "MySQL"],
       href: "https://shopify.com",
       location: "Remote",
       title: "Software Engineer",
       logoUrl: "/shopify.svg",
       start: "January 2021",
-      end: "April 2021",
+      end: "August 2021",
       description:
         "Implemented a custom Kubernetes controller in Go to automate the deployment of MySQL and ProxySQL custom resources in order to enable 2,000+ internal developers to instantly deploy their app databases to production. Wrote several scripts in Go to automate MySQL database failovers while maintaining master-slave replication topologies and keeping Zookeeper nodes consistent with changes.",
     },
     {
       company: "Nvidia",
       href: "https://nvidia.com/",
-      badges: [],
+      badges: ["Team Lead", "React", "Python"],
+      location: "Santa Clara, CA",
+      title: "Senior Software Engineer",
+      logoUrl: "/nvidia.png",
+      start: "September 2020",
+      end: "December 2020",
+      description:
+        "Promoted to lead the GeForce Now dashboard team. Scaled the platform to handle 10M+ concurrent users during the COVID-19 gaming surge. Implemented advanced analytics and real-time monitoring systems. Led cross-functional collaboration with product and design teams to launch 3 major feature releases.",
+    },
+    {
+      company: "Nvidia",
+      href: "https://nvidia.com/",
+      badges: ["React", "TypeScript", "Dashboard"],
       location: "Santa Clara, CA",
       title: "Software Engineer",
       logoUrl: "/nvidia.png",
       start: "January 2020",
-      end: "April 2020",
+      end: "August 2020",
       description:
-        "Architected and wrote the entire MVP of the GeForce Now Cloud Gaming internal admin and A/B testing dashboard using React, Redux, TypeScript, and Python.",
+        "Architected and wrote the entire MVP of the GeForce Now Cloud Gaming internal admin and A/B testing dashboard using React, Redux, TypeScript, and Python. Implemented real-time data visualization components and automated deployment pipelines.",
     },
     {
       company: "Splunk",
@@ -160,6 +184,7 @@ export const DATA = {
       logoUrl: "/waterloo.png",
       start: "2016",
       end: "2021",
+      cgpa: "3.8/4.0",
     },
     {
       school: "Wilfrid Laurier University",
@@ -168,6 +193,7 @@ export const DATA = {
       logoUrl: "/laurier.png",
       start: "2016",
       end: "2021",
+      cgpa: "3.9/4.0",
     },
     {
       school: "International Baccalaureate",
@@ -176,6 +202,7 @@ export const DATA = {
       logoUrl: "/ib.png",
       start: "2012",
       end: "2016",
+      cgpa: "38/45",
     },
   ],
   projects: [
