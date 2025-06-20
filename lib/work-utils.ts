@@ -63,3 +63,24 @@ export function groupWorkExperiences(experiences: readonly WorkExperience[]): Gr
 
   return grouped;
 }
+
+export function calculateDuration(start: string, end?: string): string {
+  const startDate = new Date(start + " 01"); // Add day to make it a valid date
+  const endDate = end ? new Date(end + " 01") : new Date();
+  
+  const totalMonths = (endDate.getFullYear() - startDate.getFullYear()) * 12 + 
+                     (endDate.getMonth() - startDate.getMonth());
+  
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+  
+  if (years === 0) {
+    return months === 1 ? "1 month" : `${months} months`;
+  } else if (months === 0) {
+    return years === 1 ? "1 year" : `${years} years`;
+  } else {
+    const yearText = years === 1 ? "1 year" : `${years} years`;
+    const monthText = months === 1 ? "1 month" : `${months} months`;
+    return `${yearText}, ${monthText}`;
+  }
+}

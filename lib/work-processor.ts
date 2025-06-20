@@ -1,3 +1,5 @@
+import { calculateDuration } from './work-utils';
+
 interface WorkItem {
   company: string;
   href?: string;
@@ -16,6 +18,7 @@ interface ProcessedWorkItem {
   location: string;
   logoUrl: string;
   period: string;
+  duration: string;
   roles?: {
     title: string;
     period: string;
@@ -62,6 +65,7 @@ export function processWorkExperiences(work: readonly WorkItem[]): ProcessedWork
         location: item.location,
         logoUrl: item.logoUrl,
         period: `${item.start} - ${item.end ?? "Present"}`,
+        duration: calculateDuration(item.start, item.end),
         title: item.title,
         description: item.description,
       };
@@ -82,6 +86,7 @@ export function processWorkExperiences(work: readonly WorkItem[]): ProcessedWork
         location: group.location,
         logoUrl: group.logoUrl,
         period: `${firstStart} - ${lastEnd}`,
+        duration: calculateDuration(firstStart, sortedItems[0].end),
         roles: sortedItems.map(item => ({
           title: item.title,
           period: `${item.start} - ${item.end ?? "Present"}`,
