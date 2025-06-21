@@ -1,3 +1,5 @@
+'use client';
+import {useState} from "react";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { LiveTime } from "@/components/live-time";
@@ -5,10 +7,12 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
+import { Lens } from "../ui/lens";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export function HeroSection() {
+  const[hovering, setHovering] = useState(false);
   return (
     <section id="hero">
       <div className="mx-auto w-full max-w-2xl space-y-8">
@@ -27,10 +31,12 @@ export function HeroSection() {
             />
           </div>
           <BlurFade delay={BLUR_FADE_DELAY}>
-            <Avatar className="size-28 border">
-              <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-              <AvatarFallback>{DATA.initials}</AvatarFallback>
-            </Avatar>
+            <Lens hovering={hovering} setHovering={setHovering}>
+                <Avatar className="size-28 border cursor-pointer rounded-none">
+                  <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                  <AvatarFallback>{DATA.initials}</AvatarFallback>
+                </Avatar>
+              </Lens>
           </BlurFade>
         </div>
         
